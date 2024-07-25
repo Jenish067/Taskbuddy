@@ -1,0 +1,133 @@
+.add {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 50px 20px;
+
+    h1 {
+      width: max-content;
+      margin-bottom: 30px;
+      color: gray;
+      font-weight: 300;
+    }
+
+    .sections {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      label {
+        color: gray;
+        font-size: 18px;
+      }
+
+      .info,
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input,
+        select,
+        textarea {
+          padding: 20px;
+        }
+
+        .images {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+
+          .imagesInputs {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          }
+        }
+
+        button {
+          border: none;
+          padding: 20px;
+          color: white;
+          font-weight: 500;
+          font-size: 18px;
+          background-color: #1dbf73;
+          cursor: pointer;
+        }
+
+        .add {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          input {
+            width: 100%;
+          }
+        }
+
+        .addedFeatures {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+
+          button {
+            height: 30px;
+            font-size: 12px;
+            font-weight: 400;
+            background: transparent;
+            color: red;
+            border: 1px solid red;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .add .container .sections {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .add .container .sections .info,
+  .add .container .sections .details {
+    flex: 1;
+  }
+
+  .add .container .sections .images {
+    flex-direction: row;
+  }
+
+  .add .container .sections .add {
+    flex-direction: row;
+    justify-content: space-between;
+
+    input {
+      width: 80%;
+    }
+  }
+
+  .add .container .sections .addedFeatures {
+    gap: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .add .container .sections {
+    gap: 100px;
+  }
+
+  .add .container .sections .add {
+    input {
+      width: 80%;
+    }
+  }
+}
