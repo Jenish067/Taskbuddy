@@ -58,10 +58,12 @@ function MyGigs() {
             <thead>
               <tr>
                 <th>Image</th>
+                <th>Freelancer</th>
                 <th>Title</th>
                 <th>Price</th>
                 <th>Sales</th>
-                <th>Action</th>
+                <th>Status</th>
+                <th>Time Period</th>
               </tr>
             </thead>
             <tbody>
@@ -70,17 +72,20 @@ function MyGigs() {
                   <td>
                     <img className="image" src={gig.cover} alt="" />
                   </td>
+                  <td>{gig.freelancer && gig.freelancer.name ? gig.freelancer.name : null}</td>
                   <td>{gig.title}</td>
                   <td>{gig.price}</td>
                   <td>{gig.payment_type}</td>
-                  <td>
+                  <td>{gig.status}</td>
+                  <td>{gig.time_period}</td>
+                  {/* <td>
                     <img
                       className="delete"
                       src="./img/delete.png"
                       alt=""
                       onClick={() => handleDelete(gig._id)}
                     />
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>

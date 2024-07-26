@@ -17,11 +17,16 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-import Pay from "./pages/pay/Pay";
-import Proposal from "./pages/proposal/Proposal";
-import Success from "./pages/success/Success";
+import ProposalPage from "./pages/ProposalPage/ProposalPage"; 
+import User from "./pages/user/User";
 function App() {
   const queryClient = new QueryClient();
+
+  // useEffect(() => {
+  //   // Assume getToken is a function to retrieve the token from local storage or other storage
+  //   const token = localStorage.getItem('token');
+  //   setAuthToken(token);
+  // }, []);
 
   const Layout = () => {
     return (
@@ -81,17 +86,18 @@ function App() {
           element: <Login />,
         },
         {
-          path: "/pay/:id",
-          element: <Pay />,
-        },
-        {
-          path: "/success",
-          element: <Success />,
-        },
-        {
           path:"/proposal",
-          element:<Proposal/>,
-        }
+          element: <ProposalPage/>
+        },
+      
+        {
+          path:"/user/:email",
+          element:<User/>
+        },
+        // {
+        //   path:"/pay",
+        //   element:<Payment/>
+        // }
       ],
     },
   ]);
