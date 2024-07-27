@@ -17,6 +17,10 @@ const Orders = () => {
       }),
   });
 
+  const handleNavigate = () => {
+    navigate('/pay'); // Replace with your target page route
+  };
+
   const { isLoading: isLoadingProjects, error: errorProjects, data: dataProjects } = useQuery({
     queryKey: ["proposal"],
     queryFn: () =>
@@ -26,12 +30,14 @@ const Orders = () => {
   });
 
   const handleContact = async (order) => {
-    const sellerId = order.sellerId;
-    const buyerId = order.buyerId;
-    const id = sellerId + buyerId;
-
+    const sellerId = order.client.clientid;
+    const buyerId = order.freelancer.freelancerid;
+    // if(currentUser.type=='CLIENT'){
+    //   const id = order.;
+    // }
+    
     try {
-      const res = await newRequest.get(`/conversations/single/${id}`);
+      const res = await newRequest.get(`api/conversations/${buyerId}/${sellerId}`);
       navigate(`/message/${res.data.id}`);
     } catch (err) {
       if (err.response.status === 404) {
@@ -50,19 +56,6 @@ const Orders = () => {
       const response = await newRequest.post(`/proposal/${proposalId}/accept`);
 
       window.location.reload();
-      // if (response.ok) {
-      //   const result = await response.json();
-      //   console.log('Proposal accepted successfully:', result);
-      //   // Optionally, update local state or refetch data
-        // window.location.reload(); // Refresh the page to see the updated status
-      // } else {
-      //   console.error('Failed to accept proposal:', response.statusText);
-      //   // Handle submission error (e.g., show an error message)
-      // }
-    // } catch (error) {
-    //   console.error('Error accepting proposal:', error);
-    //   // Handle network or other errors
-    // }
   };
 
   const handleUserRedirect = (email) => {
@@ -119,7 +112,7 @@ const Orders = () => {
                       <span>Proposal Accepted</span>
                     ) : (
                       <>
-                        <button onClick={() => handleAccept(order.proposalid)}>Accept</button>
+                        <button onClick={handleNavigate}>Accept</button>
                         <button>Reject</button>
                       </>
                     )}

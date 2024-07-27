@@ -1,0 +1,148 @@
+.message {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.message .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px;
+  padding: 10px;
+}
+.message .container .breadcrumbs {
+  font-weight: 300;
+  font-size: 13px;
+  color: #555;
+}
+.message .container .messages {
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 400px;
+  overflow: auto;
+}
+.message .container .messages .item {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+  font-size: 16px;
+}
+.message .container .messages .item.owner {
+  flex-direction: row-reverse;
+  align-self: flex-end;
+}
+.message .container .messages .item.owner p {
+  max-width: 80%;
+  border-radius: 20px 0 20px 20px;
+  background-color: royalblue;
+  color: white;
+}
+.message .container .messages .item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.message .container .messages .item p {
+  max-width: 80%;
+  padding: 15px;
+  background-color: rgb(244, 241, 241);
+  border-radius: 0 20px 20px 20px;
+  color: gray;
+  font-weight: 300;
+}
+.message .container hr {
+  height: 0;
+  border: 0.5px solid rgb(232, 230, 230);
+  margin-bottom: 10px;
+}
+.message .container .write {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.message .container .write textarea {
+  width: 70%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.message .container .write button {
+  background-color: #1dbf73;
+  padding: 15px;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 80px;
+}
+
+@media (max-width: 768px) {
+  .message {
+    padding: 10px;
+  }
+  .container {
+    margin: 10px;
+    padding: 5px;
+  }
+  .container .messages {
+    padding: 10px;
+    height: 300px;
+  }
+  .container .messages .item {
+    gap: 10px;
+    font-size: 14px;
+  }
+  .container .messages .item img {
+    width: 25px;
+    height: 25px;
+  }
+  .container .messages .item p {
+    padding: 10px;
+  }
+  .container .write textarea {
+    width: 65%;
+    height: 60px;
+  }
+  .container .write button {
+    padding: 10px;
+    width: 70px;
+  }
+}
+@media (max-width: 480px) {
+  .message {
+    padding: 5px;
+  }
+  .container {
+    margin: 5px;
+    padding: 5px;
+  }
+  .container .messages {
+    padding: 5px;
+    height: 200px;
+  }
+  .container .messages .item {
+    gap: 5px;
+    font-size: 12px;
+  }
+  .container .messages .item img {
+    width: 20px;
+    height: 20px;
+  }
+  .container .messages .item p {
+    padding: 5px;
+  }
+  .container .write textarea {
+    width: 60%;
+    height: 50px;
+  }
+  .container .write button {
+    padding: 5px;
+    width: 60px;
+  }
+}/*# sourceMappingURL=Message.css.map */

@@ -1,0 +1,142 @@
+.gigCard {
+  width: 324px;
+  height: 400px;
+  border: 1px solid rgb(228, 228, 228);
+  margin-bottom: 40px;
+}
+.gigCard img {
+  width: 100%;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gigCard .info {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.gigCard .info .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.gigCard .info .user img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gigCard .info p {
+  color: #111;
+}
+.gigCard .info .star {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.gigCard .info .star img {
+  height: 14px;
+  width: 14px;
+}
+.gigCard .info .star span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffc108;
+}
+.gigCard hr {
+  height: 0;
+  border: 0.5px solid rgb(228, 228, 228);
+}
+.gigCard .detail {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gigCard .detail img {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gigCard .detail .price span {
+  color: #999;
+  font-size: 12px;
+}
+.gigCard .detail .price h2 {
+  color: #555;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: end;
+}
+.gigCard .detail .price sup {
+  font-size: 12px;
+  font-weight: 300;
+}
+@media (max-width: 768px) {
+  .gigCard {
+    width: 280px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .gigCard .info {
+    padding: 10px 15px;
+    gap: 15px;
+  }
+  .gigCard .info .user img {
+    width: 22px;
+    height: 22px;
+  }
+  .gigCard .info .star img {
+    width: 12px;
+    height: 12px;
+  }
+  .gigCard .info .star span {
+    font-size: 12px;
+  }
+  .gigCard .detail {
+    padding: 10px 15px;
+  }
+  .gigCard .detail .price span,
+  .gigCard .detail .price sup {
+    font-size: 10px;
+  }
+  .gigCard .detail .price h2 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .gigCard {
+    width: 240px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .gigCard .info {
+    padding: 10px;
+    gap: 10px;
+  }
+  .gigCard .info .user img {
+    width: 20px;
+    height: 20px;
+  }
+  .gigCard .info .star img {
+    width: 10px;
+    height: 10px;
+  }
+  .gigCard .info .star span {
+    font-size: 10px;
+  }
+  .gigCard .detail {
+    padding: 10px;
+  }
+  .gigCard .detail .price span,
+  .gigCard .detail .price sup {
+    font-size: 8px;
+  }
+  .gigCard .detail .price h2 {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=GigCard.css.map */

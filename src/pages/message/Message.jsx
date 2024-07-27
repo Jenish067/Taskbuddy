@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Message.scss";
@@ -7,32 +7,53 @@ import "./Message.scss";
 const Message = () => {
   const { id } = useParams();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
   const queryClient = useQueryClient();
+  const [socket, setSocket] = useState(null);
+  const [messages, setMessages] = useState([]);
 
-  const { isLoading, error, data } = useQuery({
-    queryKey: ["messages"],
+  useEffect(() => {
+    const ws = new WebSocket('ws://localhost:8080');
+    setSocket(ws);
+
+    ws.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      if (message.conversationId === id) {
+        setMessages((prevMessages) => [...prevMessages, message]);
+      }
+    };
+
+    return () => {
+      ws.close();
+    };
+  }, [id]);
+
+  useQuery({
+    queryKey: ["messages", id],
     queryFn: () =>
-      newRequest.get(`/messages/${id}`).then((res) => {
+      newRequest.get(`/api/conversations/${id}/messages`).then((res) => {
+        setMessages(res.data);
         return res.data;
       }),
   });
 
   const mutation = useMutation({
     mutationFn: (message) => {
-      return newRequest.post(`/messages`, message);
+      return newRequest.post(`/api/messages`, message);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["messages"]);
+      queryClient.invalidateQueries(["messages", id]);
     },
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    mutation.mutate({
+    const message = {
       conversationId: id,
       desc: e.target[0].value,
-    });
+      userId: currentUser.userid,
+    };
+    mutation.mutate(message);
+    socket.send(JSON.stringify(message));
     e.target[0].value = "";
   };
 
@@ -48,8 +69,8 @@ const Message = () => {
           "error"
         ) : (
           <div className="messages">
-            {data.map((m) => (
-              <div className={m.userId === currentUser._id ? "owner item" : "item"} key={m._id}>
+            {messages.map((m) => (
+              <div className={m.userId === currentUser.userid ? "owner item" : "item"} key={m._id}>
                 <img
                   src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
                   alt=""

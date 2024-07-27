@@ -13,12 +13,19 @@ import Orders from "./pages/orders/Orders";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
+import ESewaPayment from "./pages/PaymentPage/ESewaPayment"
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
 import ProposalPage from "./pages/ProposalPage/ProposalPage"; 
 import User from "./pages/user/User";
+import adminDashboard from "./pages/dashboard/admin/adminDashboard";
+import clientTable from "./pages/dashboard/admin/clientTable";
+import freelancerTable from "./pages/dashboard/admin/freelancerTable";
+import paymentTable from "./pages/dashboard/admin/paymentTable";
+import projectsTable from "./pages/dashboard/admin/projectsTable"
+import Dashboard from "./pages/dashboard/admin/Dashboard"
 function App() {
   const queryClient = new QueryClient();
 
@@ -94,10 +101,35 @@ function App() {
           path:"/user/:email",
           element:<User/>
         },
-        // {
-        //   path:"/pay",
-        //   element:<Payment/>
-        // }
+        {
+          path:"/pay",
+          element:<ESewaPayment/>
+        },
+        {
+          path:"/admin",
+          element:<adminDashboard/>
+        },
+        {
+          path:"/dashboard_table",
+          element:<Dashboard/>
+        },
+        {
+          path:"/client_table",
+          element:<clientTable/>
+        },
+        {
+          path:"/freelancer_table",
+          element:<freelancerTable/>
+        },
+        {
+          path:"/project_table",
+          element:<projectsTable/>
+        },
+        {
+          path:"/payment_table",
+          element:<paymentTable/>
+        },
+
       ],
     },
   ]);

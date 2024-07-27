@@ -1,0 +1,120 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #666;
+  margin: 50px 0;
+}
+.footer img {
+  width: 24px;
+  height: 24px;
+}
+.footer .container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+}
+.footer .container .top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer .container .top .item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 200px;
+}
+.footer .container .top .item h2 {
+  font-size: 16px;
+  color: #555;
+}
+.footer .container .top .item span {
+  font-weight: 300;
+}
+.footer .container hr {
+  margin: 50px 0;
+  height: 0;
+  border: 1px solid #ebe9e9;
+}
+.footer .container .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer .container .bottom .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer .container .bottom .left span {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.footer .container .bottom .right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.footer .container .bottom .right .social {
+  display: flex;
+  gap: 20px;
+}
+.footer .container .bottom .right .link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .footer .container .top {
+    gap: 10px;
+  }
+  .footer .container .top .item {
+    min-width: 150px;
+  }
+  .footer .container .top .item h2 {
+    font-size: 14px;
+  }
+  .footer .container .top .item span {
+    font-size: 14px;
+  }
+  .footer .container .bottom {
+    gap: 10px;
+  }
+  .footer .container .bottom .left,
+  .footer .container .bottom .right {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .footer {
+    margin: 30px 0;
+  }
+  .footer .container {
+    padding: 0 10px;
+  }
+  .footer .container .top {
+    gap: 5px;
+  }
+  .footer .container .top .item {
+    min-width: 100px;
+  }
+  .footer .container .top .item h2 {
+    font-size: 12px;
+  }
+  .footer .container .top .item span {
+    font-size: 12px;
+  }
+  .footer .container .bottom {
+    gap: 5px;
+  }
+  .footer .container .bottom .left,
+  .footer .container .bottom .right {
+    gap: 5px;
+  }
+}/*# sourceMappingURL=Footer.css.map */
