@@ -29,9 +29,15 @@ function Login() {
       setAuthToken(token);
       const info = await newRequest.get("/main/userInfo");
       localStorage.setItem("currentUser", JSON.stringify(info.data));
-
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if(currentUser.type==="ADMIN"){
+        navigate('/clients')
+      }
+      else{
+        navigate("/");
+      }
       // Redirect the user to the home page or any desired location upon successful login
-      navigate("/");
+      
     
     } catch (err) {
       // Handle errors from the API response

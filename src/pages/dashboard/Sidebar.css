@@ -1,0 +1,27 @@
+li {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  color: white;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.div_1 h1 {
+  font-size: 25px;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.div_2 {
+  margin-top: 50px;
+  font-size: 20px;
+  margin-right: 1000px;
+}
+
+.nav-items {
+  margin-top: 1000px;
+}/*# sourceMappingURL=Sidebar.css.map */

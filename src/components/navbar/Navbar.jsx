@@ -45,10 +45,10 @@ function Navbar() {
           <span className="dot">.</span>
         </div>
         <div className={`links ${mobileMenuOpen ? "open" : ""}`}>
-          <span>Business</span>
+          {/* <span>Business</span>
           <span>Explore</span>
-          <span>English</span>
-          {!currentUser?.isSeller && <span>Become a Seller</span>}
+          <span>English</span> */}
+          {!currentUser?.isSeller && <span></span>}
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
               <img src={currentUser.img || "/img/noavatar.jpg"} alt="" />

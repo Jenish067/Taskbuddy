@@ -1,0 +1,64 @@
+/* Base styles for the layout */
+.main-div {
+  display: flex; /* Align sidebar and content side by side */
+  min-height: 50vh; /* Ensure it takes full viewport height */
+  padding: 0; /* Remove default padding if any */
+  margin: 0; /* Remove default margin if any */
+}
+
+/* Sidebar styles */
+.sidebar {
+  height: 100%;
+  margin-left: 10px;
+  border-radius: 30px;
+  width: 30%; /* 30% width for the sidebar */
+  background-color: #013914; /* Light grey background color */
+  color: #000; /* Dark text color for better readability */
+  padding: 1rem; /* Padding inside the sidebar */
+  box-sizing: border-box; /* Include padding in the width */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Main content styles */
+.container {
+  width: 70%; /* 70% width for the content area */
+  padding: 20px; /* Padding inside the content area */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+/* Table styling */
+.TableContainer {
+  margin-top: 20px; /* Space above the table */
+}
+
+/* Remove underline from links (if any) */
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 25%; /* Adjust sidebar width for tablets */
+  }
+  .container {
+    width: 75%; /* Adjust content area width for tablets */
+  }
+}
+@media (max-width: 768px) {
+  .main-div {
+    flex-direction: column; /* Stack sidebar and content vertically */
+  }
+  .sidebar,
+  .container {
+    width: 100%; /* Full width on smaller screens */
+    margin: 0; /* Remove margin on smaller screens */
+  }
+  .sidebar {
+    border-radius: 0; /* Remove border-radius on mobile for better fit */
+    position: relative; /* Allow it to flow with content */
+    min-height: auto; /* Adjust height based on content */
+  }
+}/*# sourceMappingURL=Clients.css.map */

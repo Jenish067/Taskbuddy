@@ -69,6 +69,7 @@ function Register() {
           <select name="type" onChange={handleTypeChange}>
             <option value="FREELANCER">Freelancer</option>
             <option value="CLIENT">Client</option>
+            <option value="ADMIN">Admin</option>
           </select>
           <button type="submit">Register</button>
         </div>
